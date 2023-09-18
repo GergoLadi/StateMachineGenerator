@@ -2,17 +2,19 @@
 A tool to generate random state machines having configurable properties. The algorithm is loosely based on the Erdős-Rényi model [1] and was used to supply inputs for our tests in [2]. The utility can generate state machines with a set number of states and a desired density of self transitions and regular transitions. The algorithm ensures that all the states are reachable, that there is at least one valid transition from every state, and that the resulting state machine is deterministic (i.e. there are no states where the same input can lead to two different states).
 
 ## Usage
-Simply run the utility to see the required and valid parameters.
+Simply run the utility to see the required and optional parameters along with valid ranges (where applicable).
 
-> Usage: StateMachineGenerator <numStates> <pctSelfLoop> <pctRandomEdges> <pctReuseInputChar> <pctReuseOutputChar> [outputFileName]
->  
->Parameters:
->        numStates (integer, 2+, required): The number of states in the state machine.
->        pctSelfLoop (integer, 0-100, required): The probability (in %) that a state will have a self loop.
->        pctRandomEdges (integer, 0-100, required): The probability (in %) that two states will be connected.
->        pctReuseInputChar (integer, 0-100, required): The probability (in %) that a previously used input character will be reused in a transition.
->        pctReuseOutputChar (integer, 0-100, required): The probability (in %) that a previously used output character will be reused in a transition.
->        outputFileName (string, optional): If provided, the output will be written to this file instead of being printed to the console.
+```
+Usage: StateMachineGenerator <numStates> <pctSelfLoop> <pctRandomEdges> <pctReuseInputChar> <pctReuseOutputChar> [outputFileName]
+  
+Parameters:
+    numStates (integer, 2+, required): The number of states in the state machine.
+    pctSelfLoop (integer, 0-100, required): The probability (in %) that a state will have a self loop.
+    pctRandomEdges (integer, 0-100, required): The probability (in %) that two states will be connected.
+    pctReuseInputChar (integer, 0-100, required): The probability (in %) that a previously used input character will be reused in a transition.
+    pctReuseOutputChar (integer, 0-100, required): The probability (in %) that a previously used output character will be reused in a transition.
+    outputFileName (string, optional): If provided, the output will be written to this file instead of being printed to the console.
+```
 
 ## Example
 #### Command line
